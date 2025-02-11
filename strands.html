@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Strands</title>
+  <style>
+    /* Basic reset and layout */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: yellow;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: yellow;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 20px 40px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: 100%;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin: 0;
+    }
+
+    .navbar li {
+      position: relative;
+    }
+
+    .navbar a {
+      color: black;
+      text-decoration: none;
+      padding: 10px 20px;
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+
+    .navbar a:hover {
+      color: white;
+      background-color: transparent;
+      text-shadow: 0 0 5px #ffff00, 0 0 10px #ffff00, 0 0 20px #ffff00, 0 0 40px #ffff00, 0 0 80px #ffff00;
+      box-shadow: 0 0 10px rgba(255, 255, 0, 0.5);
+      transform: scale(1.1);
+    }
+
+    /* Header Styling */
+    .header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .logo {
+      width: 150px; /* Adjust the logo size */
+      height: 150px;
+      margin-bottom: 20px; /* Space between logo and title */
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+      color: black;
+    }
+
+    p.school-definition {
+      font-size: 18px;
+      color: black;
+      margin-bottom: 40px;
+      max-width: 600px;
+    }
+
+    /* Container for the photos */
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      max-width: 90%;
+    }
+
+    /* Styling for the images */
+    .photo-link {
+      display: block;
+      position: relative;
+    }
+
+    .photo-image {
+      width: 200px;
+      height: 200px;
+      border-radius: 10px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .photo-image:hover {
+      transform: scale(1.1);
+    }
+
+    /* Styling for the definition popup */
+    .definition {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      justify-content: center;
+      align-items: center;
+      animation: fadeIn 1s ease-out;
+    }
+
+    .definition-content {
+      background-color: white;
+      padding: 30px;
+      border-radius: 8px;
+      width: 80%;
+      max-width: 800px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      animation: slideIn 0.5s ease-out;
+    }
+
+    h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    button.close-btn {
+      padding: 10px 20px;
+      background-color: black;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button.close-btn:hover {
+      background-color: silver;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateY(-20px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 600px) {
+      .photo-image {
+        width: 150px;
+        height: 150px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar" id="navbar">
+    <!-- Navbar Links -->
+    <ul>
+      <li><a href="home2.html" id="homeLink">HOME</a></li>
+      <li><a href="about.html">ABOUT US</a></li>
+      <li><a href="strands.html">STRANDS</a></li>
+      <li><a href="facilities.html">FACILITIES</a></li>
+      <li><a href="Faculty.html">FACULTY</a></li>
+      <li><a href="announcement.html">ANNOUNCEMENT</a></li>
+      <li><a href="index.html">LOGOUT</a></li>
+    </ul>
+  </div>
+
+  <!-- Header Section with RNHS Logo Above the Title -->
+  <div class="header">
+    <img src="RNHS.png" class="logo"> <!-- Replace with actual RNHS logo URL -->
+    <h1>Rosales National High School</h1>
+  </div>
+
+  <p class="school-definition">
+    Rosales National High School is a public institution in Rosales, Pangasinan, Philippines, committed to providing quality education to students. The school offers various academic strands in Senior High School, preparing learners for higher education or future careers through specialized tracks like STEM, ABM, GAS, HUMSS, and TVL.
+  </p>
+
+  <!-- Container for the strands -->
+  <div class="container">
+    <!-- Non-TVL Strands (STEM, HUMSS, ABM, GAS) in the specified order -->
+    <div class="photo">
+      <a href="#" class="photo-link" onclick="showDefinition('stem')">
+        <img src="STEM.png" alt="STEM" class="photo-image">
+      </a>
+    </div>
+    <div class="photo">
+      <a href="#" class="photo-link" onclick="showDefinition('humss')">
+        <img src="HUMSS.png" alt="HUMSS" class="photo-image">
+      </a>
+    </div>
+    <div class="photo">
+      <a href="#" class="photo-link" onclick="showDefinition('abm')">
+        <img src="ABM.png" alt="ABM" class="photo-image">
+      </a>
+    </div>
+    <div class="photo">
+      <a href="#" class="photo-link" onclick="showDefinition('gas')">
+        <img src="GAS.png" alt="GAS" class="photo-image">
+      </a>
+    </div>
+
+    <!-- TVL Single Image to Show All Tracks -->
+    <div class="photo">
+      <a href="#" class="photo-link" onclick="showTvlDefinition()">
+        <img src="TVL.png" alt="TVL" class="photo-image">
+      </a>
+    </div>
+  </div>
+
+  <!-- STEM Modal -->
+  <div class="definition" id="definition-stem">
+    <div class="definition-content">
+      <h3>STEM Strand</h3>
+      <p>The Science, Technology, Engineering, and Mathematics (STEM) strand focuses on scientific and technological fields, preparing students for engineering, research, and technology-related careers.</p>
+      <button class="close-btn" onclick="closeDefinition('stem')">Close</button>
+    </div>
+  </div>
+
+  <!-- HUMSS Modal -->
+  <div class="definition" id="definition-humss">
+    <div class="definition-content">
+      <h3>HUMSS Strand</h3>
+      <p>The Humanities and Social Sciences (HUMSS) strand focuses on subjects related to the arts, social sciences, and humanities, preparing students for careers in law, education, media, and social services.</p>
+      <button class="close-btn" onclick="closeDefinition('humss')">Close</button>
+    </div>
+  </div>
+
+  <!-- ABM Modal -->
+  <div class="definition" id="definition-abm">
+    <div class="definition-content">
+      <h3>ABM Strand</h3>
+      <p>The Accountancy, Business, and Management (ABM) strand focuses on business, management, and accounting subjects, preparing students for business-related careers or entrepreneurship.</p>
+      <button class="close-btn" onclick="closeDefinition('abm')">Close</button>
+    </div>
+  </div>
+
+  <!-- GAS Modal -->
+  <div class="definition" id="definition-gas">
+    <div class="definition-content">
+      <h3>GAS Strand</h3>
+      <p>The General Academic Strand (GAS) allows students to explore a wide variety of subjects and prepare for diverse career options, including humanities, social sciences, and education.</p>
+      <button class="close-btn" onclick="closeDefinition('gas')">Close</button>
+    </div>
+  </div>
+
+  <!-- TVL Modal with All TVL Tracks -->
+  <div class="definition" id="definition-tvl">
+    <div class="definition-content">
+      <h3>TVL Strands</h3>
+      <p>TVL (Technical-Vocational-Livelihood) focuses on providing students with practical skills and hands-on training in various technical and vocational fields. This strand is designed for students who prefer to acquire skills that they can directly apply in the workforce after graduation, rather than pursuing further academic studies.</p>
+      <div class="tvl-tracks">
+        <div class="track">
+          <h4>TVL ICT</h4>
+          <p>The Technical-Vocational-Livelihood (TVL) Information and Communications Technology (ICT) strand focuses on computer-related skills, preparing students for careers in IT, programming, networking, and digital design.</p>
+        </div>
+        <div class="track">
+          <h4>TVL Home Economics</h4>
+          <p>The TVL Home Economics strand focuses on skills in household management, including culinary arts, fashion design, and other related careers in the hospitality and service industries.</p>
+        </div>
+        <div class="track">
+          <h4>TVL Dressmaking</h4>
+          <p>The TVL Dressmaking strand focuses on skills in garment construction, pattern making, and designing, preparing students for careers in the fashion and garment industries.</p>
+        </div>
+        <div class="track">
+          <h4>TVL SMAW (Welding)</h4>
+          <p>The TVL SMAW strand focuses on welding skills, equipping students for careers in construction, metal fabrication, and industrial maintenance through hands-on training in welding techniques.</p>
+        </div>
+      </div>
+      <button class="close-btn" onclick="closeTvlDefinition()">Close</button>
+    </div>
+  </div>
+
+  <script>
+    // Function to show the definition for a specific strand
+    function showDefinition(strand) {
+      document.getElementById('definition-' + strand).style.display = 'flex';
+    }
+
+    // Function to show the TVL modal with all tracks
+    function showTvlDefinition() {
+      document.getElementById('definition-tvl').style.display = 'flex';
+    }
+
+    // Function to close the definition popup
+    function closeTvlDefinition() {
+      document.getElementById('definition-tvl').style.display = 'none';
+    }
+
+    // Function to close specific strand definitions
+    function closeDefinition(strand) {
+      document.getElementById('definition-' + strand).style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>

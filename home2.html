@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>School Website</title>
+  <!-- Link to external CSS file -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navbar with Logo on the left side -->
+  <div class="navbar" id="navbar">
+    <!-- School Logo -->
+    <img src="RNHS.png" alt="School Logo" class="logo">
+
+    <!-- Navbar Links -->
+    <ul>
+      <li><a href="#home" id="homeLink">HOME</a></li>
+      <li><a href="about.html">ABOUT US</a></li>
+      <li><a href="strands.html">STRANDS</a></li>
+      <li><a href="facilities.html">FACILITIES</a></li> 
+      <li><a href="Faculty.html">FACULTY</a></li>
+      <li><a href="announcement.html">ANNOUNCEMENT</a></li>
+       <li><a href="index.html">LOGOUT</a></li>
+    </ul>
+  </div>
+
+  <!-- Main Content Section -->
+  <div class="main-content" id="mainContent">
+    <!-- Left Section with Greeting Text -->
+    <div class="greeting">
+      <h1>ROSALES NATIONAL HIGH SCHOOL - SENIOR HIGH SCHOOL</h1>
+      <p>We extend our warmest greetings to you! As you step into our virtual halls, we are thrilled to introduce you to a world of exceptional education and boundless opportunities.</p>
+    </div>
+
+    <!-- Right Section with Image -->
+    <div class="image-container">
+      <img src="background.jpg" alt="School Building">
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+  <div class="footer">
+    <p>All rights reserved by: <a href="developer.html" target="_blank">Chloe M. Gonzales</a></p>
+  </div>
+
+  <!-- Script to handle login logic (removed the pop-up logic, but kept logout functionality) -->
+  <script>
+    window.onload = function() {
+      // By default, show the navbar and main content
+      document.getElementById("navbar").style.display = "flex";
+      document.getElementById("mainContent").style.display = "flex";
+    }
+
+    function logout() {
+      // Show a message or redirect user upon logout, if necessary
+      alert("Logged out. You can implement redirection or other actions.");
+      // For now, just hide the content and show a message
+      document.getElementById("navbar").style.display = "none";
+      document.getElementById("mainContent").style.display = "none";
+    }
+  </script>
+
+</body>
+</html>
